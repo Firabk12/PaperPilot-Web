@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PaperPilot — Your research co-pilot on Telegram</title>
+<meta name="description" content="PaperPilot is a Telegram bot that helps you search arXiv, chat with papers, get AI summaries, and compare research — right inside your chat.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<nav class="navbar navbar-expand-md pp-navbar sticky-top">
+  <div class="container">
+    <a class="navbar-brand pp-brand" href="#top">
+      <span class="pp-brand-icon">🛩️</span> PaperPilot
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#ppNav" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="ppNav">
+      <ul class="navbar-nav align-items-md-center gap-md-2">
+        <li class="nav-item"><a class="nav-link" href="#features">What it does</a></li>
+        <li class="nav-item"><a class="nav-link" href="#how">How it works</a></li>
+        <li class="nav-item"><a class="nav-link" href="#stack">Built with</a></li>
+        <li class="nav-item ms-md-2">
+          <a class="btn pp-btn-primary pp-btn-sm" href="https://t.me/yourbotusername" target="_blank" rel="noopener">
+            Open in Telegram
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header id="top" class="pp-hero">
+  <div class="pp-cloud pp-cloud-1"></div>
+  <div class="pp-cloud pp-cloud-2"></div>
+  <div class="pp-cloud pp-cloud-3"></div>
+
+  <div class="container">
+    <div class="row align-items-center gy-5">
+      <div class="col-lg-6 text-center text-lg-start">
+        <span class="pp-eyebrow-chip">for researchers &amp; curious students</span>
+        <h1 class="pp-h1 mt-3">Your research<br>co-pilot lives<br>in Telegram now.</h1>
+        <p class="pp-lead mt-3">
+          Search arXiv, chat with papers, get instant AI summaries, and compare
+          studies side by side — no tabs, no logins, just message PaperPilot
+          and go.
+        </p>
+        <div class="d-flex flex-column flex-sm-row gap-3 mt-4 justify-content-center justify-content-lg-start">
+          <a href="https://t.me/yourbotusername" target="_blank" rel="noopener" class="btn pp-btn-primary pp-btn-lg">
+            ✈️ Chat with PaperPilot
+          </a>
+          <a href="#features" class="btn pp-btn-ghost pp-btn-lg">See what it can do</a>
+        </div>
+        <p class="pp-hint mt-3">Free to start · Works on mobile &amp; desktop Telegram</p>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="pp-scene">
+          <svg viewBox="0 0 420 420" class="pp-mascot" role="img" aria-label="Cute pilot flying a paper airplane over a stack of papers">
+            <!-- floating papers -->
+            <g class="pp-float-slow">
+              <rect x="40" y="270" width="70" height="90" rx="6" fill="#fff" stroke="#2C2A4A" stroke-width="4" transform="rotate(-8 75 315)"/>
+              <line x1="52" y1="292" x2="98" y2="288" stroke="#2C2A4A" stroke-width="3" stroke-linecap="round" transform="rotate(-8 75 315)"/>
+              <line x1="52" y1="304" x2="92" y2="301" stroke="#2C2A4A" stroke-width="3" stroke-linecap="round" transform="rotate(-8 75 315)"/>
+            </g>
+            <g class="pp-float-slow2">
+              <rect x="300" y="300" width="70" height="90" rx="6" fill="#fff" stroke="#2C2A4A" stroke-width="4" transform="rotate(10 335 345)"/>
+              <line x1="312" y1="322" x2="358" y2="318" stroke="#2C2A4A" stroke-width="3" stroke-linecap="round" transform="rotate(10 335 345)"/>
+              <line x1="312" y1="334" x2="352" y2="331" stroke="#2C2A4A" stroke-width="3" stroke-linecap="round" transform="rotate(10 335 345)"/>
+            </g>
+
+            <!-- paper airplane -->
+            <g class="pp-plane">
+              <path d="M210 120 L330 190 L210 175 L150 230 L170 190 Z" fill="#FFD166" stroke="#2C2A4A" stroke-width="5" stroke-linejoin="round"/>
+              <path d="M210 120 L210 175 L170 190 Z" fill="#FF8FAB" stroke="#2C2A4A" stroke-width="5" stroke-linejoin="round"/>
+
+              <!-- chibi pilot -->
+              <g transform="translate(195,140)">
+                <circle cx="30" cy="20" r="26" fill="#FFF9F0" stroke="#2C2A4A" stroke-width="4"/>
+                <path d="M6 14 a24 20 0 0 1 48 0 Z" fill="#2C2A4A"/>
+                <circle cx="21" cy="22" r="3.4" fill="#2C2A4A"/>
+                <circle cx="39" cy="22" r="3.4" fill="#2C2A4A"/>
+                <path d="M20 31 q10 8 20 0" stroke="#2C2A4A" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <circle cx="14" cy="27" r="4" fill="#FF8FAB" opacity="0.7"/>
+                <circle cx="46" cy="27" r="4" fill="#FF8FAB" opacity="0.7"/>
+                <rect x="10" y="40" width="40" height="22" rx="10" fill="#8FB8FF" stroke="#2C2A4A" stroke-width="4"/>
+                <circle cx="30" cy="8" r="8" fill="#FF8FAB" stroke="#2C2A4A" stroke-width="4"/>
+              </g>
+            </g>
+
+            <!-- sparkles -->
+            <g fill="#FFD166" class="pp-twinkle">
+              <path d="M80 90 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4 Z"/>
+            </g>
+            <g fill="#FF8FAB" class="pp-twinkle pp-twinkle-delay">
+              <path d="M360 80 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3 Z"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= FEATURES ================= -->
+<section id="features" class="pp-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="pp-h2">Everything a paper-chaser needs</h2>
+      <p class="pp-section-lead">Six little superpowers, all inside one chat window.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="pp-sticker pp-tilt-1">
+          <div class="pp-sticker-icon">🔎</div>
+          <h3 class="pp-h3">arXiv search</h3>
+          <p>Find papers by keyword, title, author, or category — PaperPilot fetches straight from arXiv in seconds.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="pp-sticker pp-tilt-2">
+          <div class="pp-sticker-icon">💬</div>
+          <h3 class="pp-h3">Chat with papers</h3>
+          <p>Ask questions about a paper's method, results, or claims and get answers grounded in the actual text.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="pp-sticker pp-tilt-3">
+          <div class="pp-sticker-icon">📝</div>
+          <h3 class="pp-h3">Instant summaries</h3>
+          <p>Skip the 20-page skim. Get a clear AI-written summary of any paper in a few tidy paragraphs.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="pp-sticker pp-tilt-4">
+          <div class="pp-sticker-icon">⚖️</div>
+          <h3 class="pp-h3">Paper comparison</h3>
+          <p>Drop in two papers and see how their methods, results, and contributions actually stack up.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="pp-sticker pp-tilt-5">
+          <div class="pp-sticker-icon">🎙️</div>
+          <h3 class="pp-h3">Voice questions</h3>
+          <p>Send a voice note instead of typing — PaperPilot listens and replies just the same.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="pp-sticker pp-tilt-6">
+          <div class="pp-sticker-icon">📄</div>
+          <h3 class="pp-h3">Download &amp; save</h3>
+          <p>Pull PDFs, save preferences, and pick up your reading list right where you left off.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section id="how" class="pp-section pp-section-alt">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="pp-h2">Three steps and you're flying</h2>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4">
+        <div class="pp-step">
+          <div class="pp-step-num">1</div>
+          <h3 class="pp-h3">Open the chat</h3>
+          <p>Tap the button and say hi to PaperPilot on Telegram — no account needed.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="pp-step">
+          <div class="pp-step-num">2</div>
+          <h3 class="pp-h3">Ask or search</h3>
+          <p>Type a topic, paste an arXiv link, or send a voice note — whatever's easiest.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="pp-step">
+          <div class="pp-step-num">3</div>
+          <h3 class="pp-h3">Get your answer</h3>
+          <p>Read the summary, keep chatting about it, or save it for later. That's it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STACK ================= -->
+<section id="stack" class="pp-section text-center">
+  <div class="container">
+    <h2 class="pp-h2">Built with</h2>
+    <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+      <span class="pp-chip">Python</span>
+      <span class="pp-chip">python-telegram-bot</span>
+      <span class="pp-chip">Google Generative AI</span>
+      <span class="pp-chip">arXiv API</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="pp-cta">
+  <div class="container text-center">
+    <h2 class="pp-h2 pp-h2-light">Ready to fly through your reading list?</h2>
+    <p class="pp-lead pp-lead-light mt-2 mb-4">PaperPilot is one message away.</p>
+    <a href="https://t.me/yourbotusername" target="_blank" rel="noopener" class="btn pp-btn-primary pp-btn-lg">
+      ✈️ Open PaperPilot on Telegram
+    </a>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="pp-footer">
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 text-center text-md-start">
+    <span>🛩️ PaperPilot — made with care for people who love reading papers.</span>
+    <span class="pp-footer-links">
+      <a href="https://t.me/yourbotusername" target="_blank" rel="noopener">Telegram</a>
+    </span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
