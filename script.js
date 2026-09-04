@@ -20,3 +20,50 @@ if (mascot) {
     }, 400);
   });
 }
+
+// THEME TOGGLE — persists user choice and respects system preference
+(function(){
+  var root = document.documentElement;
+  var toggle = document.getElementById('themeToggle');
+  var icon = document.getElementById('themeIcon');
+  var storageKey = 'pp-theme';
+
+  function applyTheme(name){
+    root.setAttribute('data-theme', name);
+    if(icon) icon.textContent = name === 'dark' ? '☀️' : '🌙';
+  }
+
+  function getPreferredTheme(){
+    var stored = null;
+    try { stored = localStorage.getItem(storageKey); } catch(e) { /* ignore */ }
+    if(stored) return stored;
+    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return prefersDark ? 'dark' : 'light';
+  }
+
+  // initialize
+  var initial = getPreferredTheme();
+  applyTheme(initial);
+
+  // attach handler
+  if(toggle){
+    toggle.addEventListener('click', function(){
+      var current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      var next = current === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+      try { localStorage.setItem(storageKey, next); } catch(e) {}
+    });
+  }
+
+  // respond to system changes if user hasn't set a preference
+  try{
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e){
+      var stored = null;
+      try { stored = localStorage.getItem(storageKey); } catch(e) {}
+      if(stored) return; // user choice wins
+      applyTheme(e.matches ? 'dark' : 'light');
+    });
+  }catch(e){ /* older browsers */ }
+
+})();
+
